@@ -1,9 +1,9 @@
-module.exports = function (router) {
-  router.get("/", function (req, res) {
-    res.render("home");
+module.exports = Router => {
+  Router.get("/", (req, res) => {
+    res.render("index");
   });
 
-  router.get("/saved", function (req, res) {
+  Router.get("/saved", (req, res) => {
     res.render("saved");
   });
 }
