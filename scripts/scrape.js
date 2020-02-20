@@ -6,13 +6,13 @@ const axios = require("axios");
 const scrape = function () {
   axios.get("https://npr.org/sections/music-news").then(function (response) {
 
-    var $ = cheerio.load(response.data);
+    const $ = cheerio.load(response.data);
 
     var results = [];
 
-    $("article").each(function (i, element) {
+    $("article.item").each(function (i, element) {
       var title = $(element).find("h2.title").text().trim();
-      var summary = $(element).find("a").text().replace("/\n + \n +").trim();
+      var summary = $(element).find("p.teaser").text().trim();
       var link = $(element).find("a").attr("href");
 
 
@@ -29,6 +29,7 @@ const scrape = function () {
       console.log(dbArticle);
     })
       .catch(function (err) {
+        return response.json(err);
         // If an error occurred, log it
         console.log(err);
       });

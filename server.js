@@ -34,7 +34,7 @@ mongoose.connect("mongodb://localhost/scraper", { useNewUrlParser: true }, funct
 });
 
 //sets up for deployment or local host
-const db = process.env.MONGODB_URI || "mongodb://localhost/mainHeadlines";
+var db = process.env.MONGODB_URI || "mongodb://localhost/mainheadlines";
 
 //mongoose connection to databse
 mongoose.connect(db, function (error) {
