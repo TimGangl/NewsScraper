@@ -51,7 +51,9 @@ app.get("/saved", (req, res) => {
 });
 
 
-//GET route for scraping the jazztimes site
+
+
+//GET route for scraping the site
 app.get("/scrape", function (req, res) {
   // First, we grab the body of the html with axios
   axios.get("https://npr.org/sections/music-news").then(function (response) {
@@ -82,12 +84,6 @@ app.get("/scrape", function (req, res) {
 
   });
 });
-
-//GET route 
-
-
-
-
 
 //start server
 app.listen(PORT, function () {

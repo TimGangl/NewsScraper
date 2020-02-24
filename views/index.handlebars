@@ -32,6 +32,19 @@
     </a>
     <div class="card-body">
       <h5 class="card-title">{{this.summary}}</h5>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".saved-modal-sm" href="">Save
+        Article</button>
+      <!-- Modal -->
+      <div class="modal fade saved-modal-sm" tabindex="-1" role="dialog" aria-labelledby="saved-modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog saved-modal-sm">
+          <div class="modal-content text-center">
+            <h1>Article Saved</h1>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
   {{/each}}
@@ -45,4 +58,4 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="/public/assets/js/index.js"></script>
+<!--<script src="/public/assets/js/index.js"></script>-->
