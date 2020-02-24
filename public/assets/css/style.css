@@ -113,6 +113,10 @@ body {
   width: 80%;
 }
 
+.card-header{
+  color: white;
+}
+
 .footer > .container > p {
   position: absolute;
   right: 0;

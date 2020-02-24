@@ -6,7 +6,7 @@
     <ul class=" navbar-nav mr-auto">
       <li class="nav-item active"><a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a></li>
       <li class="nav-item"><a class="nav-link" href="/saved">Saved Articles</a></li>
-      <li class="nav-item"><a class="btn btn-danger scrape-new">SCRAPE NEW ARTICLES!</a></li>
+      <li class="nav-item"><a class="btn btn-danger scrape-new" href="./scrape">SCRAPE NEW ARTICLES!</a></li>
       <li class="nav-item">
         <a class="btn btn-danger clear">CLEAR ARTICLES!</a>
       </li>
@@ -25,14 +25,24 @@
 </div>
 
 <div class="container-fluid article-container">
+  {{#each found}}
+  <div class="card">
+    <a href={{this.link}} target="_blank">
+      <h3 class="card-header">{{this.title}} </h3>
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">{{this.summary}}</h5>
+    </div>
+  </div>
+  {{/each}}
 </div>
 
 <footer class="footer">
-  <div class="container">
+  <div class="container text-center">
     <p>NPR Music News Scraper</p>
   </div>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="./../assets/js/index.js"></script>
+<script src="/public/assets/js/index.js"></script>
