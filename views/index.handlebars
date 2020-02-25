@@ -32,15 +32,17 @@
     </a>
     <div class="card-body">
       <h5 class="card-title">{{this.summary}}</h5>
-      <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".saved-modal-sm" href="">Save
+      <button type="button" class="btn btn-danger float-right" data-toggle="modal" data-target=".saved-modal-sm"
+        href="">Save
         Article</button>
       <!-- Modal -->
       <div class="modal fade saved-modal-sm" tabindex="-1" role="dialog" aria-labelledby="saved-modalLabel"
         aria-hidden="true">
         <div class="modal-dialog saved-modal-sm">
           <div class="modal-content text-center">
-            <h1>Article Saved</h1>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <h2>Article Saved</h2>
+            <div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
           </div>
 
         </div>

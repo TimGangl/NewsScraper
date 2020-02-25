@@ -65,7 +65,7 @@ app.get("/scrape", function (req, res) {
       result.title = $(this).find("h2.title").text().trim();
       result.summary = $(this).find("p.teaser").text().trim();
       result.link = $(this).find("a").attr("href");
-
+      result.date = $(this).find("span.date").text().trim();
 
       // console.log(result);
 
