@@ -8,7 +8,7 @@
       <li class="nav-item"><a class="nav-link" href="/saved">Saved Articles</a></li>
       <li class="nav-item"><a class="btn btn-danger scrape-new" href="./scrape">SCRAPE NEW ARTICLES!</a></li>
       <li class="nav-item">
-        <a class="btn btn-danger clear">CLEAR ARTICLES!</a>
+        <a class="btn btn-danger clear" href="./clear">CLEAR ARTICLES!</a>
       </li>
     </ul>
   </div>
@@ -25,31 +25,37 @@
 </div>
 
 <div class="container-fluid article-container">
-  {{#each found}}
-  <div class="card">
-    <a href={{this.link}} target="_blank">
-      <h3 class="card-header">{{this.title}} </h3>
-    </a>
-    <div class="card-body">
-      <h5 class="card-title">{{this.summary}}</h5>
-      <button type="button" class="btn btn-danger float-right" data-toggle="modal" data-target=".saved-modal-sm"
-        href="">Save
-        Article</button>
-      <!-- Modal -->
-      <div class="modal fade saved-modal-sm" tabindex="-1" role="dialog" aria-labelledby="saved-modalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog saved-modal-sm">
-          <div class="modal-content text-center">
-            <h2>Article Saved</h2>
-            <div>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
-          </div>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      {{#each found}}
+      <div class="card">
+        <a href={{this.link}} target="_blank">
+          <h3 class="card-header">{{this.title}} </h3>
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{this.summary}}</h5>
+          <button type="button" id="save-btn" class="btn btn-danger float-right" data-toggle="modal"
+            data-target=".saved-modal-sm" href="">Save
+            Article</button>
+          <!-- Modal -->
+          <div class="modal fade saved-modal-sm" tabindex="-1" role="dialog" aria-labelledby="saved-modalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog saved-modal-sm">
+              <div class="modal-content text-center">
+                <h2>Article Saved</h2>
+                <div>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
+              </div>
 
+            </div>
+          </div>
         </div>
       </div>
+      {{/each}}
     </div>
+    <div class="col-sm-1"></div>
   </div>
-  {{/each}}
 </div>
 
 <footer class="footer">

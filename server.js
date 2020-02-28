@@ -84,7 +84,21 @@ app.get("/scrape", function (req, res) {
 
   });
 });
-
+app.post("/saved/:id", function (req, res) {
+  // Use the article id to find and update it's saved property to true
+  Article.findOneAndUpdate({ "_id": req.params.id }, { "saved": true })
+    // Execute the above query
+    .exec(function (err, doc) {
+      // Log any errors
+      if (err) {
+        console.log(err);
+      }
+      // Log result
+      else {
+        console.log("doc: ", doc);
+      }
+    });
+});
 //start server
 app.listen(PORT, function () {
   console.log("App running on port " + PORT + "!");
